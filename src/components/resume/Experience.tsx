@@ -6,7 +6,7 @@ const CVItem: React.FC<{
   details: React.ReactNode;
   active?: boolean;
   companyUrl?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }> = ({ title, details, active = false, companyUrl = null, children }) => (
   <div
     className={`px-6 py-6 border-2 ${
@@ -49,7 +49,7 @@ const Tag: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const Resume: React.FC = () => (
   <>
     <div className="flex flex-col gap-5">
-      <CVItem
+      {/* <CVItem
         title="Freelance Software Engineer"
         details={
           <>
@@ -62,100 +62,38 @@ const Resume: React.FC = () => (
           I'm currently taking on freelance work. If you have a project for me,
           let's talk!
         </div>
-      </CVItem>
+      </CVItem> */}
       <CVItem
-        title="Konbini"
-        companyUrl="https://usekonbini.com/"
+        title="ASU Preparatory Academy"
+        companyUrl="https://asuprep.asu.edu"
         details={
           <>
-            <span className="whitespace-nowrap">Founder &middot;</span>{" "}
-            <span className="whitespace-nowrap">Dec 2021 &mdash; current</span>
+            <span className="whitespace-nowrap">Lead Developer &middot;</span>{" "}
+            <span className="whitespace-nowrap">Contract &middot;</span>{" "}
+            <span className="whitespace-nowrap">Dec 2022 &mdash; current</span>
           </>
         }
         active={true}
       >
-        <div className="flex flex-col gap-3">
-          <p>
-            <Link href="https://usekonbini.com/">Konbini</Link> is a SaaS
-            project I started with a few goals in mind:
-          </p>
-
-          <ul className="cv-item-bullets flex flex-col gap-1">
-            <li>
-              Build a cool product that genuinely helps people build stuff
-              and/or get their work done.
-            </li>
-            <li>
-              Level up my engineering skills by personally architecting and
-              building a fairly ambitious project from scratch.
-            </li>
-            <li>
-              In the same vein, learn more about business development and
-              marketing by building, marketing and maintaining/growing a SaaS
-              product completely by myself.
-            </li>
-            <li>
-              (Hopefully!) establish a new, independent income stream for myself
-              that isn’t contingent on employment or client work.
-            </li>
-          </ul>
-
-          <p>
-            …and while it’s definitely turned out to be more work than I’d
-            initially bargained for (what doesn’t?), I’m quite happy with how
-            it’s turned out.{" "}
-          </p>
-
-          <p>
-            The tech stack is full-stack TypeScript with Node.js as the
-            serverside runtime. The app consists of a number of containerized
-            services deployed to Google Cloud Platform (primarily{" "}
-            <Link href="https://cloud.google.com/run">Cloud Run</Link>), and
-            heavily relying on asynchronous communication via{" "}
-            <Link href="https://cloud.google.com/pubsub">Cloud Pub/Sub</Link>.{" "}
-          </p>
-
-          <p>Other tooling and miscellaneous tech choices include: </p>
-
-          <ul className="cv-item-bullets flex flex-col gap-1">
-            <li>
-              <Link href="https://www.docker.com/">Docker</Link> (with{" "}
-              <Link href="https://docs.docker.com/compose/">
-                Docker Compose
-              </Link>{" "}
-              in development)
-            </li>
-            <li>
-              <Link href="https://www.mysql.com/">MySQL</Link> (with{" "}
-              <Link href="https://vitess.io/">Vitess</Link> via{" "}
-              <Link href="https://planetscale.com/">PlanetScale</Link> in
-              production)
-            </li>
-            <li>
-              <Link href="https://redis.io/">Redis</Link>
-            </li>
-            <li>
-              <Link href="https://graphql.org/">GraphQL</Link> (a public,
-              extensively-documented GraphQL API is a{" "}
-              <Link href="https://usekonbini-site.netlify.app/docs/api">
-                core feature
-              </Link>{" "}
-              of the product)
-            </li>
-            <li>
-              <Link href="https://reactjs.org/">React</Link> with{" "}
-              <Link href="https://nextjs.org/">Next.js</Link> (marketing site,
-              dashboard app, and merchant UI)
-            </li>
-            <li>
-              <Link href="https://www.netlify.com/">Netlify</Link> (marketing
-              site)
-            </li>
-            <li>
-              <Link href="https://tailwindcss.com/">Tailwind CSS</Link>
-            </li>
-          </ul>
-        </div>
+        <Tags>
+          <Tag>JavaScript</Tag>
+          <Tag>TypeScript</Tag>
+          <Tag>Node.js</Tag>
+          <Tag>React</Tag>
+          <Tag>Next.js</Tag>
+          <Tag>Docker</Tag>
+          <Tag>MongoDB</Tag>
+        </Tags>
+      </CVItem>
+      <CVItem
+        title="Konbini"
+        details={
+          <>
+            <span className="whitespace-nowrap">Founder &middot;</span>{" "}
+            <span className="whitespace-nowrap">Dec 2021 &mdash; Nov 2022</span>
+          </>
+        }
+      >
         <Tags>
           <Tag>JavaScript</Tag>
           <Tag>TypeScript</Tag>
@@ -289,7 +227,6 @@ const Resume: React.FC = () => (
           <Tag>Kubernetes</Tag>
           <Tag>GraphQL</Tag>
           <Tag>Next.js</Tag>
-          <Tag>DevOps</Tag>
         </Tags>
       </CVItem>
       <CVItem
@@ -318,7 +255,6 @@ const Resume: React.FC = () => (
           <Tag>Laravel</Tag>
           <Tag>Nuxt.js</Tag>
           <Tag>WordPress</Tag>
-          <Tag>DevOps</Tag>
           <Tag>Linux</Tag>
         </Tags>
       </CVItem>
