@@ -1,16 +1,28 @@
+// @ts-check
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
-import tailwind from "@astrojs/tailwind";
-import * as fs from "fs";
 
-// https://astro.build/config
+import tailwindcss from "@tailwindcss/vite";
+import netlify from "@astrojs/netlify";
+import sitemap from "@astrojs/sitemap";
+
+import tomorrowNight from "./src/blog/Tomorrow_Night.tmTheme.json";
+
+import react from "@astrojs/react";
+
 export default defineConfig({
-  integrations: [preact({ compat: true }), tailwind()],
+  site: "https://lynn.zone",
+
+  integrations: [sitemap(), react()],
+
   markdown: {
     shikiConfig: {
-      theme: JSON.parse(
-        fs.readFileSync("./src/blog/Tomorrow_Night.tmTheme.json", "utf-8")
-      ),
+      theme: tomorrowNight,
     },
   },
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  adapter: netlify(),
 });

@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import "@/styles/global.css";
 
 import "@fontsource/barlow/400.css";
 import "@fontsource/barlow/400-italic.css";
@@ -7,75 +7,103 @@ import "@fontsource/barlow/500.css";
 import "@fontsource/barlow/600.css";
 import "@fontsource/barlow/700.css";
 
-import Nav from "../components/Nav"
+import Nav from "@/components/Nav";
 
 export interface Props {
-  title?: string
-  style?: "default" | "blog-post",
+  title?: string;
+  style?: "default" | "blog-post";
   socialImage?: {
     url: string;
     width: number;
     height: number;
-  }
+  };
 }
 
-const { title, style = "default", socialImage } = Astro.props as Props
+const { title, style = "default", socialImage } = Astro.props as Props;
 ---
 
 <html lang="en" class="min-h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title ? `${title} | lynn.zone` : `Lynn Romich`}</title>
 
-  <title>{title ? `${title} | lynn.zone` : `Lynn Romich`}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title ?? `Lynn Romich`} />
+    <meta property="og:site_name" content="lynn.zone" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title ?? `Lynn Romich`} />
-  <meta property="og:site_name" content="lynn.zone" />
+    <meta name="twitter:creator" content="@lynnntropy" />
 
-  <meta name="twitter:creator" content="@lynnntropy" />
+    {socialImage && <meta property="og:image" content={socialImage.url} />}
+    {
+      socialImage && (
+        <meta
+          property="og:image:width"
+          content={socialImage.width.toString(10)}
+        />
+      )
+    }
+    {
+      socialImage && (
+        <meta
+          property="og:image:height"
+          content={socialImage.height.toString(10)}
+        />
+      )
+    }
 
-  {socialImage &&
-  <meta property="og:image" content={socialImage.url} />}
-  {socialImage &&
-  <meta property="og:image:width" content={socialImage.width.toString(10)} />}
-  {socialImage &&
-  <meta property="og:image:height" content={socialImage.height.toString(10)} /> }
+    {socialImage && <meta name="twitter:card" content="summary_large_image" />}
+    {socialImage && <meta name="twitter:image" content={socialImage.url} />}
 
-  {socialImage &&
-  <meta name="twitter:card" content="summary_large_image">}
-  {socialImage &&
-  <meta name="twitter:image" content={socialImage.url}>}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icons/site.webmanifest" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/icons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-  <link rel="manifest" href="/icons/site.webmanifest">
-  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/icons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/icons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+    <script
+      defer
+      data-domain="lynn.zone"
+      src="https://plausible.io/js/plausible.js"></script>
+  </head>
 
-  <script defer data-domain="lynn.zone" src="https://plausible.io/js/plausible.js"></script>
-</head>
-
-<body class="min-h-full px-6 bg-gray-100 text-gray-800 font-sans lg:px-0 dark:bg-gray-900 dark:text-gray-200">
-  <div class="min-h-screen flex flex-col pt-6">
-    <Nav style={style} client:load />
-    <main class="flex-1 mb-12 w-full max-w-3xl self-center flex flex-col sm:mb-32 2xl:mt-24">
-      <slot />
-    </main>
-    <footer class="text-center py-6 text-gray-600 dark:text-gray-500">
-      <p class="mb-2">Made with ❤ on Earth.</p>
-      <p class="text-sm text-gray-400 dark:text-gray-600">
-        This site doesn't use tracking cookies.
-      </p>
-    </footer>
-  </div>
-</body>
-
+  <body
+    class="min-h-full px-6 bg-gray-100 text-gray-800 font-sans lg:px-0 dark:bg-gray-900 dark:text-gray-200"
+  >
+    <div class="min-h-screen flex flex-col pt-6">
+      <Nav style={style} client:load />
+      <main
+        class="flex-1 mb-12 w-full max-w-3xl self-center flex flex-col sm:mb-32 2xl:mt-24"
+      >
+        <slot />
+      </main>
+      <footer class="text-center py-6 text-gray-600 dark:text-gray-500">
+        <p class="mb-2">Made with ❤ on Earth.</p>
+        <p class="text-sm text-gray-400 dark:text-gray-600">
+          This site doesn't use tracking cookies.
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>

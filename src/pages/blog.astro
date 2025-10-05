@@ -1,21 +1,26 @@
 ---
-import { compareDesc, parseISO, format } from 'date-fns'
-import Layout from '../layouts/Layout.astro';
+import { compareDesc, parseISO, format } from "date-fns";
+import Layout from "../layouts/Layout.astro";
 
-
-const blogPosts = (await Astro.glob('./blog/*.md')).sort((a, b) => compareDesc(parseISO(a.frontmatter.date), parseISO(b.frontmatter.date)))
+const blogPosts = (await Astro.glob("./blog/*.md")).sort((a, b) =>
+  compareDesc(parseISO(a.frontmatter.date), parseISO(b.frontmatter.date))
+);
 ---
 
 <Layout title="Blog">
-    <h1 class="mb-6 text-4xl font-medium">Blog</h1>
-    <ul class="w-full mb-2 flex flex-col text-base gap-4 md:gap-2">
-        {blogPosts.map(post =>
+  <h1 class="mb-6 text-4xl font-medium">Blog</h1>
+  <ul class="w-full mb-2 flex flex-col text-base gap-4 md:gap-2">
+    {
+      blogPosts.map((post) => (
         <li class="flex flex-col md:flex-row md:justify-between md:gap-6">
-            <a href={post.url} class="hover:underline">{post.frontmatter.title}</a>
-            <span class="text-gray-400 md:text-end dark:text-gray-500">
-                {format(parseISO(post.frontmatter.date), 'MMM do, yyyy')}
-            </span>
+          <a href={post.url} class="hover:underline">
+            {post.frontmatter.title}
+          </a>
+          <span class="text-gray-400 md:text-end dark:text-gray-500">
+            {format(parseISO(post.frontmatter.date), "MMM do, yyyy")}
+          </span>
         </li>
-        )}
-    </ul>
+      ))
+    }
+  </ul>
 </Layout>

@@ -1,12 +1,12 @@
+import clsx from "clsx";
 import * as React from "react";
 import {
+  SiBluesky,
   SiGithub,
   SiGmail,
   SiLinkedin,
-  SiTwitter,
   SiMastodon,
-} from "react-icons/si/index.js";
-import { classes } from "src/utils/styles";
+} from "react-icons/si";
 
 const LinksItem: React.FC<{
   icon: React.ReactNode;
@@ -28,7 +28,7 @@ const Links: React.FC<LinksProps> = ({
 }) => {
   return (
     <ul
-      className={classes(
+      className={clsx(
         "flex flex-col gap-2 flex-wrap sm:flex-row sm:gap-x-5",
         align === "center" && `sm:justify-center`
       )}
@@ -45,10 +45,10 @@ const Links: React.FC<LinksProps> = ({
           name={"lynnntropy"}
         />
       </a>
-      <a rel="me" href="https://twitter.com/lynnntropy">
+      <a rel="me" href="https://bsky.app/profile/lynn.zone">
         <LinksItem
-          icon={<SiTwitter className="relative top-px" />}
-          name={"@lynnntropy"}
+          icon={<SiBluesky className="relative top-px" />}
+          name={"@lynn.zone"}
         />
       </a>
       {condensed && <div className="hidden basis-full sm:block" />}
