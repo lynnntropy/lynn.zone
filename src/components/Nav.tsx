@@ -1,5 +1,5 @@
+import clsx from "clsx";
 import * as React from "react";
-import { classes } from "src/utils/styles";
 
 const NavLink: React.FC<
   React.DetailedHTMLProps<
@@ -20,7 +20,7 @@ const Nav: React.FC<NavProps> = ({ style = "default" }) => {
   const avatarRef = React.useRef<HTMLImageElement | null>(null);
 
   React.useEffect(() => {
-    let handle: number = null;
+    let handle: number | null = null;
 
     const refreshAvatarAngle = () => {
       if (avatarRef.current) {
@@ -41,7 +41,7 @@ const Nav: React.FC<NavProps> = ({ style = "default" }) => {
 
   return (
     <nav
-      className={classes(
+      className={clsx(
         "mb-12 w-full self-center flex items-center gap-8 sm:mb-24 2xl:fixed 2xl:left-8 2xl:flex-col 2xl:items-stretch 2xl:w-48",
         style === "default" && "max-w-3xl",
         style === "blog-post" && "max-w-2xl"

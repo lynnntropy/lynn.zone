@@ -43,4 +43,4 @@ If this seems suspiciously simple, it’s because the Google Auth Library automa
 
 Note that your requests will still fail if the service account assigned to the client service isn’t allowed to call the other service. All Cloud Run services use the default Compute Engine service account by default, though, so it should work out of the box.
 
-Feel free to reach out [on Twitter](https://twitter.com/lynnntropy) if you run into problems with this approach, or if you just have other thoughts about it!
+Feel free to reach out if you run into problems with this approach, or if you just have other thoughts about it!

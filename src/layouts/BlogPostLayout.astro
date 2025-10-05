@@ -1,7 +1,8 @@
 ---
-import "@fontsource/jetbrains-mono/variable.css";
-import "@fontsource/jetbrains-mono/variable-italic.css";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/jetbrains-mono/wght-italic.css";
 
+import type { MarkdownLayoutProps } from "astro";
 import {
   parseISO,
   differenceInYears,
@@ -13,28 +14,33 @@ import readingTime from "reading-time";
 import ReadingTime from "../components/ReadingTime";
 import Layout from "./Layout.astro";
 import Links from "../components/Links";
-import { getSocialImageForBlogPost } from "src/utils/blog";
+import { getSocialImageForBlogPost } from "@/utils/blog";
 
-const { content } = Astro.props;
+type Props = MarkdownLayoutProps<{
+  title: string;
+  date: string;
+}>;
 
-const date = parseISO(content.date);
+const { frontmatter, rawContent } = Astro.props;
+
+const date = parseISO(frontmatter.date);
 const showDateWarning = differenceInYears(new Date(), date) >= 2;
 const showRelativeTime = differenceInDays(new Date(), date) >= 1;
 ---
 
 <Layout
   style="blog-post"
-  title={content.title}
+  title={frontmatter.title}
   socialImage={{
-    url: getSocialImageForBlogPost(content.title),
+    url: getSocialImageForBlogPost(frontmatter.title),
     width: 2048,
     height: 1170,
   }}
 >
   <div class="mx-auto max-w-full sm:max-w-lg md:max-w-2xl">
     <div class="mb-8">
-      <h1 class="mb-3 font-medium text-2xl sm:text-4xl">{content.title}</h1>
-      <time datetime={content.date} class="mb-1 block sm:mb-0 sm:inline">
+      <h1 class="mb-3 font-medium text-2xl sm:text-4xl">{frontmatter.title}</h1>
+      <time datetime={frontmatter.date} class="mb-1 block sm:mb-0 sm:inline">
         {format(date, "MMMM do, yyyy")}
         {
           showRelativeTime && (
@@ -48,7 +54,7 @@ const showRelativeTime = differenceInDays(new Date(), date) >= 1;
         class="hidden ml-1 mr-0.5 text-gray-500 sm:inline dark:text-gray-400"
         >&middot;</span
       >
-      <ReadingTime minutes={readingTime(content.astro.source).minutes} />
+      <ReadingTime minutes={readingTime(rawContent()).minutes} />
     </div>
     {
       showDateWarning && (

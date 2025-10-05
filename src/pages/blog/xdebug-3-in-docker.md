@@ -77,4 +77,4 @@ FROM base as production
 
 That's it! You should now have an Xdebug config that works for everything from Docker Desktop to just running PHP on the same Linux machine as your editor.
 
-If you're using this config and you've found a setup it doesn't work for, please yell at me on Twitter and I'll probably add a note to this post!
+If you're using this config and you've found a setup it doesn't work for, please yell at me and I'll probably add a note to this post!

@@ -1,49 +1,76 @@
-::selection {
-  @apply bg-gray-800 text-white dark:bg-gray-100 dark:text-black;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.js";
+
+@theme {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-pre ::selection {
-  @apply bg-gray-100 text-black;
+@theme inline {
+  --color-gray-50: var(--color-zinc-50);
+  --color-gray-100: var(--color-zinc-100);
+  --color-gray-200: var(--color-zinc-200);
+  --color-gray-300: var(--color-zinc-300);
+  --color-gray-400: var(--color-zinc-400);
+  --color-gray-500: var(--color-zinc-500);
+  --color-gray-600: var(--color-zinc-600);
+  --color-gray-700: var(--color-zinc-700);
+  --color-gray-800: var(--color-zinc-800);
+  --color-gray-900: var(--color-zinc-900);
+  --color-gray-950: var(--color-zinc-950);
 }
 
-.shiki .language-id {
-  display: none;
-}
+@layer base {
+  ::selection {
+    @apply bg-gray-800 text-white dark:bg-gray-100 dark:text-black;
+  }
 
-.prose hr {
-  @apply w-32 mx-auto my-6 border-t border-gray-300 sm:w-64 dark:border-gray-700;
-}
+  pre ::selection {
+    @apply bg-gray-100 text-black;
+  }
 
-.prose p code,
-.prose li code {
-  @apply mx-0.5 px-1.5 py-0.5 rounded text-sm tracking-tight bg-gray-100 md:text-base dark:bg-gray-800 dark:text-gray-200;
+  .shiki .language-id {
+    display: none;
+  }
 
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
+  .prose hr {
+    @apply w-32 mx-auto my-6 border-t border-gray-300 sm:w-64 dark:border-gray-700;
+  }
 
-ul.cv-item-bullets {
-  @apply pl-4 list-disc;
-}
+  .prose p code,
+  .prose li code {
+    @apply mx-0.5 px-1.5 py-0.5 rounded text-sm tracking-tight bg-gray-100 md:text-base dark:bg-gray-800 dark:text-gray-200;
 
-span.highlight {
-  @apply font-medium;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
 
-  background: linear-gradient(135deg, #4338ca, #2563eb);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  ul.cv-item-bullets {
+    @apply pl-4 list-disc;
+  }
 
-@media (prefers-color-scheme: dark) {
   span.highlight {
     @apply font-medium;
 
-    background: linear-gradient(135deg, #fdba74, #fde047);
+    background: linear-gradient(135deg, #4338ca, #2563eb);
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-}
 
-pre {
-  font-variant-ligatures: none;
+  @media (prefers-color-scheme: dark) {
+    span.highlight {
+      @apply font-medium;
+
+      background: linear-gradient(135deg, #fdba74, #fde047);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  pre {
+    font-variant-ligatures: none;
+  }
 }
