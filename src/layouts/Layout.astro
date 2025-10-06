@@ -100,5 +100,11 @@ const { title, style = "default", socialImage } = Astro.props as Props;
         </p>
       </footer>
     </div>
+    <script>
+      if (import.meta.env.MODE === "development") {
+        const { accented } = await import("accented");
+        accented();
+      }
+    </script>
   </body>
 </html>
