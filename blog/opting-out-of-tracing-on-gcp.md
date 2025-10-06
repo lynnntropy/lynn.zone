@@ -9,7 +9,7 @@ This is a cool feature… if you _want_ to use Cloud Trace. If you want to send 
 
 In Honeycomb, that'll look something like this, and will prevent a lot of queries from working properly:
 
-![A screenshot of Honeycomb, showing a trace with a missing root span, and the following warning: "The root span of this trace is missing. There may be other spans missing, and the waterfall might render incorrectly. Expand the time range of the query and try again?"](/blog/opting-out-of-tracing-on-gcp/images/missing-root-span.png)
+![A screenshot of Honeycomb, showing a trace with a missing root span, and the following warning: "The root span of this trace is missing. There may be other spans missing, and the waterfall might render incorrectly. Expand the time range of the query and try again?"](@/assets/blog/opting-out-of-tracing-on-gcp/images/missing-root-span.png)
 
 In my Node.js services, instrumented using [OpenTelemetry](https://opentelemetry.io/) and its included Node.js auto-instrumentations, I "fixed" this issue by using the hooks provided by the HTTP instrumentation to discard any headers Cloud Tracing might be setting before the incoming request gets processed into a span. You can do this by replacing your call to `getNodeAutoInstrumentations()` with this code:
 
