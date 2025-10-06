@@ -1,18 +1,19 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
-import tailwindcss from "@tailwindcss/vite";
 import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
+import react from "@astrojs/react";
+import svelte from "@astrojs/svelte";
+
+import tailwindcss from "@tailwindcss/vite";
 
 import tomorrowNight from "./src/blog/Tomorrow_Night.tmTheme.json";
-
-import react from "@astrojs/react";
 
 export default defineConfig({
   site: "https://lynn.zone",
 
-  integrations: [sitemap(), react()],
+  integrations: [sitemap(), react(), svelte()],
 
   markdown: {
     shikiConfig: {

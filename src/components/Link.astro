@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { ...attrs } = Astro.props;
+---
+
+<a
+  {...attrs}
+  class:list={[
+    `text-gray-800 font-medium underline dark:text-gray-200`,
+    attrs.class,
+  ]}
+>
+  <slot />
+</a>

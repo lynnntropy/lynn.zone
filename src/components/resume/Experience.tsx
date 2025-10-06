@@ -49,20 +49,6 @@ const Tag: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const Resume: React.FC = () => (
   <>
     <div className="flex flex-col gap-5">
-      {/* <CVItem
-        title="Freelance Software Engineer"
-        details={
-          <>
-            <span className="whitespace-nowrap">2021 &mdash; current</span>
-          </>
-        }
-        active={true}
-      >
-        <div>
-          I'm currently taking on freelance work. If you have a project for me,
-          let's talk!
-        </div>
-      </CVItem> */}
       <CVItem
         title="ASU Preparatory Academy"
         orgUrl="https://asuprep.asu.edu"
