@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  active?: boolean;
+  orgUrl?: string;
+}
+
+const { title, active = false, orgUrl = null } = Astro.props;
+---
+
+<div
+  class:list={[
+    "px-6 py-6 border-2",
+    {
+      "border-gray-800 dark:border-gray-200": active,
+      "border-gray-300 dark:border-gray-700": !active,
+    },
+  ]}
+>
+  {
+    orgUrl !== null ? (
+      <a href={orgUrl} target="_blank" rel="noopener noreferrer">
+        <h3 class="mb-1 text-3xl text-gray-800 leading-tight transition dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400">
+          {title}
+        </h3>
+      </a>
+    ) : (
+      <h3 class="mb-1 text-3xl text-gray-800 leading-tight dark:text-gray-200">
+        {title}
+      </h3>
+    )
+  }
+
+  <span class="block mb-4 text-gray-800 dark:text-gray-300">
+    <slot name="details" />
+  </span>
+  <div class="leading-relaxed text-gray-800 dark:text-gray-300">
+    <slot />
+  </div>
+</div>
