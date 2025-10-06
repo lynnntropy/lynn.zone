@@ -2,7 +2,7 @@
   import type { Action } from "svelte/action";
   import rinImage from "@/assets/images/rin.png";
 
-  let prefersReducedMotion: boolean;
+  let prefersReducedMotion: boolean = true;
 
   $effect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
