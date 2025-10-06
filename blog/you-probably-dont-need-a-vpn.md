@@ -1,8 +1,6 @@
 ---
 title: You Probably Don't Need a VPN
 date: 2022-11-13
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 Given the nature of this blog, and where I usually share my content, chances are most of the people reading this probably already know everything I'm about to say here. That being said, I really wanted to write about this because I think it's a big problem, and I think those of us who see what's going on have a duty to call it out. If this post ends up being helpful to even one person, I'll consider the effort well worth it.

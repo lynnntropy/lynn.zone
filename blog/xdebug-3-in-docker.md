@@ -1,8 +1,6 @@
 ---
 title: PHP Debugging With Xdebug 3 Inside a Docker Container
 date: 2021-04-13
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 I recently spent a good few hours getting Xdebug to work with my development setup (which is [PhpStorm](https://www.jetbrains.com/phpstorm/) running [inside WSL 2](https://susi.dev/dev-env-2020) on Windows 10, and PHP/Xdebug running inside a Docker container, inside WSL 2, with [Docker Desktop](https://docs.docker.com/docker-for-windows/install/)), so here I am writing up the surprisingly simple solution I ended up with -- partially for my own future reference, but also to help out anyone who finds themselves in a similar situation.

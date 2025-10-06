@@ -1,8 +1,6 @@
 ---
 title: On Docs, DX, and Developer Happiness
 date: 2019-09-01
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 One thing I've increasingly taken notice of recently is that a lot of developers, especially in corporate environments, seem to tend to put a very low priority on the DX of their projects. Documentation is poor or non-existent; setting up a working development environment is like pulling teeth. You've got tickets to close and you're sure they'll figure it out, so who cares, right?

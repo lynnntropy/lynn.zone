@@ -1,8 +1,6 @@
 ---
 title: '"Opting Out" of Tracing Headers on Google Cloud Platform'
 date: 2022-08-09
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 If you’re using [Google Cloud Run](https://cloud.google.com/run) (and, from what I understand, this also applies to [Google Cloud Functions](https://cloud.google.com/functions) and [Google App Engine standard](https://cloud.google.com/appengine)), Google [will automatically create a trace](https://cloud.google.com/run/docs/trace) in [Cloud Trace](https://cloud.google.com/trace) for each incoming request, and inject the trace context into the request via the [standard](https://www.w3.org/TR/trace-context/) `traceparent` HTTP header.

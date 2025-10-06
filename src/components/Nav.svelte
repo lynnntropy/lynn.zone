@@ -59,7 +59,7 @@
       use:rotate
       alt="Go to homepage"
       src="/images/avatar.png"
-      class="w-12 rounded-full 2xl:h-16 2xl:w-16 2xl:mx-0 2xl:mb-4"
+      class="size-12 rounded-full 2xl:size-16 2xl:mx-0 2xl:mb-4"
     />
   </a>
   <ul class="flex gap-4 text-lg 2xl:flex-col 2xl:text-xl">

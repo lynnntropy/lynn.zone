@@ -1,8 +1,6 @@
 ---
 title: E2E Testing an App with Clerk Authentication in Cypress
 date: 2022-04-21
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 Background: [Clerk](https://clerk.dev/) is a hosted authentication and user management product.

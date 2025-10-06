@@ -1,16 +1,13 @@
 ---
-import { compareDesc, parseISO } from "date-fns";
+import { compareDesc } from "date-fns";
 
 import Layout from "../layouts/Layout.astro";
 import Links from "../components/Links";
 import Link from "../components/Link";
+import { getCollection } from "astro:content";
 
-const blogPosts = await Astro.glob("./blog/*.md");
-
-const recentBlogPosts = blogPosts
-  .sort((a, b) =>
-    compareDesc(parseISO(a.frontmatter.date), parseISO(b.frontmatter.date))
-  )
+const recentBlogPosts = (await getCollection("blog"))
+  .sort((a, b) => compareDesc(a.data.date, b.data.date))
   .slice(0, 3);
 ---
 
@@ -39,8 +36,8 @@ const recentBlogPosts = blogPosts
           {
             recentBlogPosts.map((post) => (
               <li>
-                <a href={post.url} class="hover:underline">
-                  {post.frontmatter.title}
+                <a href={`/blog/${post.id}`} class="hover:underline">
+                  {post.data.title}
                 </a>
               </li>
             ))

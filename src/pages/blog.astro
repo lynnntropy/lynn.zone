@@ -1,9 +1,10 @@
 ---
-import { compareDesc, parseISO, format } from "date-fns";
+import { compareDesc, format } from "date-fns";
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-const blogPosts = (await Astro.glob("./blog/*.md")).sort((a, b) =>
-  compareDesc(parseISO(a.frontmatter.date), parseISO(b.frontmatter.date))
+const posts = (await getCollection("blog")).sort((a, b) =>
+  compareDesc(a.data.date, b.data.date)
 );
 ---
 
@@ -11,13 +12,13 @@ const blogPosts = (await Astro.glob("./blog/*.md")).sort((a, b) =>
   <h1 class="mb-6 text-4xl font-medium">Blog</h1>
   <ul class="w-full mb-2 flex flex-col text-base gap-4 md:gap-2">
     {
-      blogPosts.map((post) => (
+      posts.map((post) => (
         <li class="flex flex-col md:flex-row md:justify-between md:gap-6">
-          <a href={post.url} class="hover:underline">
-            {post.frontmatter.title}
+          <a href={`/blog/${post.id}`} class="hover:underline">
+            {post.data.title}
           </a>
           <span class="text-gray-400 md:text-end dark:text-gray-500">
-            {format(parseISO(post.frontmatter.date), "MMM do, yyyy")}
+            {format(post.data.date, "MMM do, yyyy")}
           </span>
         </li>
       ))

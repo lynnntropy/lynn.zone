@@ -1,8 +1,6 @@
 ---
 title: Service-to-Service Communication on Google Cloud Run with tRPC
 date: 2022-08-04
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 [tRPC](https://trpc.io/) is a TypeScript library that’s usually used to enable boilerplate-free and typesafe API calls between backend and frontend code in the same app, but it works great for service-to-service communication, too.

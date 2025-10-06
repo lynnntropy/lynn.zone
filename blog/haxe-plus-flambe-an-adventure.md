@@ -1,8 +1,6 @@
 ---
 title: "Haxe + Flambe: An adventure"
 date: 2015-03-27
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 I recently built and released a small project, a web-based (HTML5 + Flash) game built using Haxe and Flambe.

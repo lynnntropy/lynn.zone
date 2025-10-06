@@ -1,8 +1,6 @@
 ---
 title: Simple, Privacy-Friendly, and Free Analytics Using Serverless Functions
 date: 2021-04-15
-
-layout: ../../layouts/BlogPostLayout.astro
 ---
 
 Whether it's for work or play, most of us usually want _some_ analytics on our websites, but the available options typically come with one or more pretty major downsides:
