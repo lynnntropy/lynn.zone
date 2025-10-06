@@ -1,6 +1,10 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @config "../../tailwind.config.js";
+@plugin "@tailwindcss/typography";
+
+@plugin "@iconify/tailwind4" {
+  prefixes: fa7-solid, fa7-brands;
+}
 
 @theme {
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif,
