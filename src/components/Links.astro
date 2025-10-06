@@ -16,37 +16,37 @@ const { align = "center", condensed = true } = Astro.props;
     { "sm:justify-center": align === "center" },
   ]}
 >
-  <a rel="me" href="https://www.linkedin.com/in/lynnntropy/">
-    <LinksItem>
+  <li>
+    <LinksItem rel="me" href="https://www.linkedin.com/in/lynnntropy/">
       <Icon slot="icon" class="fa7-brands--linkedin top-px text-lg" />
       <span slot="name">lynnntropy</span>
     </LinksItem>
-  </a>
-  <a rel="me" href="https://github.com/lynnntropy">
-    <LinksItem>
+  </li>
+  <li>
+    <LinksItem rel="me" href="https://github.com/lynnntropy">
       <Icon slot="icon" class="fa7-brands--github top-px" />
       <span slot="name">lynnntropy</span>
     </LinksItem>
-  </a>
-  <a rel="me" href="https://bsky.app/profile/lynn.zone">
-    <LinksItem>
+  </li>
+  <li>
+    <LinksItem rel="me" href="https://bsky.app/profile/lynn.zone">
       <Icon slot="icon" class="fa7-brands--bluesky top-px" />
       <span slot="name">@lynn.zone</span>
     </LinksItem>
-  </a>
+  </li>
 
-  {condensed && <div class="hidden basis-full sm:block" />}
+  {condensed && <li aria-hidden="true" class="hidden basis-full sm:block" />}
 
-  <a rel="me" href="https://hachyderm.io/@lynnntropy">
-    <LinksItem>
+  <li>
+    <LinksItem rel="me" href="https://hachyderm.io/@lynnntropy">
       <Icon slot="icon" class="fa7-brands--mastodon top-0.5 text-lg" />
       <span slot="name">@lynnntropy@hachyderm.io</span>
     </LinksItem>
-  </a>
-  <a rel="me" href="mailto:lynn@lynn.zone">
-    <LinksItem>
+  </li>
+  <li>
+    <LinksItem rel="me" href="mailto:lynn@lynn.zone">
       <Icon slot="icon" class="fa7-solid--envelope top-px" />
       <span slot="name">lynn@lynn.zone</span>
     </LinksItem>
-  </a>
+  </li>
 </ul>
