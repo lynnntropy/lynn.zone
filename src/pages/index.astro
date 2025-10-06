@@ -3,7 +3,7 @@ import { compareDesc } from "date-fns";
 
 import Layout from "../layouts/Layout.astro";
 import Links from "../components/Links";
-import Link from "../components/Link";
+import Link from "../components/Link.astro";
 import { getCollection } from "astro:content";
 
 const recentBlogPosts = (await getCollection("blog"))
@@ -43,7 +43,7 @@ const recentBlogPosts = (await getCollection("blog"))
             ))
           }
         </ul>
-        <Link className="text-sm" href="/blog">All posts 🡒</Link>
+        <Link class="text-sm" href="/blog">All posts 🡒</Link>
       </div>
     </div>
   </div>

@@ -7,11 +7,11 @@ const { ...attrs } = Astro.props;
 ---
 
 <a
-  {...attrs}
   class:list={[
     `text-gray-800 font-medium underline dark:text-gray-200`,
     attrs.class,
   ]}
+  {...attrs}
 >
   <slot />
 </a>
