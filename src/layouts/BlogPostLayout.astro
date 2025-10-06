@@ -63,9 +63,10 @@ const showRelativeTime = differenceInDays(new Date(), date) >= 1;
       showDateWarning && (
         <div class="mb-8 py-3 px-4 rounded-md bg-red-100 text-red-900 dark:bg-transparent dark:border-2 dark:border-red-900 dark:text-white">
           Watch out! This post is{" "}
-          <strong class="font-medium">more than two years old</strong>. For
-          better or worse, tech moves quickly, so any recommendations this post
-          makes may be out of date.
+          <strong class="font-medium">more than two years old</strong>.
+          <br class="hidden md:inline" />
+          For better or worse, tech tends to move quickly, so this post may be
+          out of date.
         </div>
       )
     }
