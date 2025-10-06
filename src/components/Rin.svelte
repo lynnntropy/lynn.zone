@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Action } from "svelte/action";
+  import rinImage from "@/assets/images/rin.png";
 
   let prefersReducedMotion: boolean;
 
@@ -43,6 +44,6 @@
 <img
   use:rotate
   alt="Go to homepage"
-  src="/images/avatar.png"
+  src={rinImage.src}
   class="size-12 rounded-full 2xl:size-16 2xl:mx-0 2xl:mb-4"
 />
