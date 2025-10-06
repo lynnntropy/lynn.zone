@@ -1,0 +1,56 @@
+---
+import LinksItem from "./LinksItem.astro";
+import {
+  SiBluesky,
+  SiGithub,
+  SiGmail,
+  SiLinkedin,
+  SiMastodon,
+} from "react-icons/si";
+
+export interface Props {
+  align?: "left" | "center";
+  condensed?: boolean;
+}
+
+const { align = "center", condensed = true } = Astro.props;
+---
+
+<ul
+  class:list={[
+    "flex flex-col gap-2 flex-wrap sm:flex-row sm:gap-x-5",
+    { "sm:justify-center": align === "center" },
+  ]}
+>
+  <a rel="me" href="https://www.linkedin.com/in/lynnntropy/">
+    <LinksItem>
+      <SiLinkedin slot="icon" className="relative top-px" />
+      <span slot="name">lynnntropy</span>
+    </LinksItem>
+  </a>
+  <a rel="me" href="https://github.com/lynnntropy">
+    <LinksItem>
+      <SiGithub slot="icon" className="relative top-px" />
+      <span slot="name">lynnntropy</span>
+    </LinksItem>
+  </a>
+  <a rel="me" href="https://bsky.app/profile/lynn.zone">
+    <LinksItem>
+      <SiBluesky slot="icon" className="relative top-px" />
+      <span slot="name">@lynn.zone</span>
+    </LinksItem>
+  </a>
+  {condensed && <div class="hidden basis-full sm:block" />}
+  <a rel="me" href="https://hachyderm.io/@lynnntropy">
+    <LinksItem>
+      <SiMastodon slot="icon" className="relative top-px" />
+      <span slot="name">@lynnntropy@hachyderm.io</span>
+    </LinksItem>
+  </a>
+  <a rel="me" href="mailto:lynn@lynn.zone">
+    <LinksItem>
+      <SiGmail slot="icon" className="relative top-px" />
+      <span slot="name">lynn@lynn.zone</span>
+    </LinksItem>
+  </a>
+</ul>
