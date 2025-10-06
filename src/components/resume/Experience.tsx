@@ -5,9 +5,9 @@ const CVItem: React.FC<{
   title: React.ReactNode;
   details: React.ReactNode;
   active?: boolean;
-  companyUrl?: string;
+  orgUrl?: string;
   children?: React.ReactNode;
-}> = ({ title, details, active = false, companyUrl = null, children }) => (
+}> = ({ title, details, active = false, orgUrl = null, children }) => (
   <div
     className={`px-6 py-6 border-2 ${
       active
@@ -15,8 +15,8 @@ const CVItem: React.FC<{
         : "border-gray-300 dark:border-gray-700"
     }`}
   >
-    {companyUrl !== null ? (
-      <a href={companyUrl}>
+    {orgUrl !== null ? (
+      <a href={orgUrl} target="_blank" rel="noopener noreferrer">
         <h3 className="mb-1 text-3xl text-gray-800 leading-tight transition dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400">
           {title}
         </h3>
@@ -65,7 +65,7 @@ const Resume: React.FC = () => (
       </CVItem> */}
       <CVItem
         title="ASU Preparatory Academy"
-        companyUrl="https://asuprep.asu.edu"
+        orgUrl="https://asuprep.asu.edu"
         details={
           <>
             <span className="whitespace-nowrap">Lead Developer &middot;</span>{" "}
@@ -107,7 +107,7 @@ const Resume: React.FC = () => (
       </CVItem>
       <CVItem
         title="DataCamp"
-        companyUrl="https://www.datacamp.com/"
+        orgUrl="https://www.datacamp.com/"
         details={
           <>
             <span className="whitespace-nowrap">
@@ -144,7 +144,7 @@ const Resume: React.FC = () => (
       </CVItem>
       <CVItem
         title="Infostud"
-        companyUrl="https://www.infostud.com/en/"
+        orgUrl="https://www.infostud.com/en/"
         details={
           <>
             <span className="whitespace-nowrap">
@@ -260,7 +260,7 @@ const Resume: React.FC = () => (
       </CVItem>
       <CVItem
         title="Execom"
-        companyUrl="https://htecgroup.com/"
+        orgUrl="https://htecgroup.com/"
         details={
           <>
             <span className="whitespace-nowrap">Intern &middot;</span>{" "}
