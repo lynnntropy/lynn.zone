@@ -7,7 +7,7 @@ import "@fontsource/barlow/500.css";
 import "@fontsource/barlow/600.css";
 import "@fontsource/barlow/700.css";
 
-import Nav from "@/components/Nav.svelte";
+import Nav from "@/components/Nav.astro";
 
 export interface Props {
   title?: string;
@@ -87,7 +87,7 @@ const { title, style = "default", socialImage } = Astro.props as Props;
     class="min-h-full px-6 bg-gray-100 text-gray-800 font-sans lg:px-0 dark:bg-gray-900 dark:text-gray-200"
   >
     <div class="min-h-screen flex flex-col pt-6">
-      <Nav style={style} client:load />
+      <Nav {style} />
       <main
         class="flex-1 mb-12 w-full max-w-3xl self-center flex flex-col sm:mb-32 2xl:mt-24"
       >
