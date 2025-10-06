@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort((a, b) =>
           <a href={`/blog/${post.id}`} class="hover:underline">
             {post.data.title}
           </a>
-          <span class="text-gray-400 md:text-end dark:text-gray-400">
+          <span class="text-gray-600 md:text-end dark:text-gray-400">
             {format(post.data.date, "MMM do, yyyy")}
           </span>
         </li>

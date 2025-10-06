@@ -47,7 +47,7 @@ const showRelativeTime = differenceInDays(new Date(), date) >= 1;
         {format(date, "MMMM do, yyyy")}
         {
           showRelativeTime && (
-            <span class="text-gray-500 dark:text-gray-400">
+            <span class="text-gray-600 dark:text-gray-400">
               ({formatDistanceToNow(date, { addSuffix: true })})
             </span>
           )
@@ -75,7 +75,7 @@ const showRelativeTime = differenceInDays(new Date(), date) >= 1;
       <slot />
     </article>
     <div>
-      <p class="mb-4 text-gray-500 dark:text-gray-400">
+      <p class="mb-4 text-gray-600 dark:text-gray-400">
         Hey, thanks for reading all the way through! If you'd like to get in
         touch or keep up with what I'm working on, here's where you can find me
         on the usual places.
