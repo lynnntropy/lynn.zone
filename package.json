@@ -1,6 +1,7 @@
 {
   "name": "lynn.zone",
   "type": "module",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,21 +10,13 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.5.11",
-    "@astrojs/react": "^4.4.0",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/svelte": "^7.2.0",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource/barlow": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.0",
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.1",
-    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "reading-time": "^1.5.0",
     "svelte": "^5.39.9",
     "tailwindcss": "^4.1.14",
@@ -35,8 +28,6 @@
   "devDependencies": {
     "@iconify/json": "^2.2.392",
     "@iconify/tailwind4": "^1.0.6",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0"
+    "@tailwindcss/typography": "^0.5.19"
   }
 }
