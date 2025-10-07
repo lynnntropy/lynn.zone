@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 @plugin "@tailwindcss/typography";
-
 @plugin "@iconify/tailwind4" {
   prefixes: fa7-solid, fa7-brands;
 }
@@ -82,3 +81,5 @@
     font-variant-ligatures: none;
   }
 }
+
+@import "./fonts.css";
