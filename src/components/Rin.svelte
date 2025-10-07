@@ -21,21 +21,42 @@
 
   const rotate: Action = (node) => {
     $effect(() => {
-      let handle: number | null = null;
+      let rAFHandle: number | null = null;
 
       const refreshAngle = () => {
         if (prefersReducedMotion) {
-          node.style.transform = "";
+          if (node.style.transform !== "") {
+            node.style.transform = "";
+          }
         } else {
-          node.style.transform = `rotate(${(0.25 * window.scrollY) % 360}deg`;
+          const angle = Number(((0.25 * window.scrollY) % 360).toPrecision(5));
+          const transform = `rotate(${angle}deg)`;
+          if (node.style.transform !== transform) {
+            node.style.transform = transform;
+          }
         }
-        handle = requestAnimationFrame(refreshAngle);
+
+        rAFHandle = requestAnimationFrame(refreshAngle);
       };
 
-      refreshAngle();
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (entry?.isIntersecting) {
+          rAFHandle = requestAnimationFrame(refreshAngle);
+        } else if (rAFHandle) {
+          cancelAnimationFrame(rAFHandle);
+          rAFHandle = null;
+        }
+      });
+
+      observer.observe(node);
 
       return () => {
-        if (handle !== null) cancelAnimationFrame(handle);
+        observer.disconnect();
+
+        if (rAFHandle) {
+          cancelAnimationFrame(rAFHandle);
+        }
       };
     });
   };
