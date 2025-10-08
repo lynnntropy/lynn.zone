@@ -21,15 +21,18 @@ const { title, style = "default", socialImage } = Astro.props as Props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
     <title>{title ? `${title} | lynn.zone` : `Lynn Romich`}</title>
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Lynn Romich"
+      href={new URL("rss.xml", Astro.site)}
+    />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title ?? `Lynn Romich`} />
     <meta property="og:site_name" content="lynn.zone" />
-
-    <meta name="twitter:creator" content="@lynnntropy" />
 
     {socialImage && <meta property="og:image" content={socialImage.url} />}
     {
@@ -51,6 +54,8 @@ const { title, style = "default", socialImage } = Astro.props as Props;
 
     {socialImage && <meta name="twitter:card" content="summary_large_image" />}
     {socialImage && <meta name="twitter:image" content={socialImage.url} />}
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <link
       rel="apple-touch-icon"
