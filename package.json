@@ -15,21 +15,22 @@
     "@astrojs/svelte": "^7.2.0",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource/barlow": "^5.2.8",
+    "@iconify/json": "^2.2.392",
+    "@iconify/tailwind4": "^1.0.6",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.1",
     "date-fns": "^4.1.0",
     "reading-time": "^1.5.0",
     "svelte": "^5.39.9",
     "tailwindcss": "^4.1.14",
+    "ultrahtml": "^1.6.0"
+  },
+  "devDependencies": {
+    "accented": "^1.1.2",
     "typescript": "^5.9.3"
   },
   "volta": {
     "node": "22.20.0"
-  },
-  "devDependencies": {
-    "@iconify/json": "^2.2.392",
-    "@iconify/tailwind4": "^1.0.6",
-    "@tailwindcss/typography": "^0.5.19",
-    "accented": "^1.1.2"
   }
 }
