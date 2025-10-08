@@ -14,11 +14,17 @@ export default defineConfig({
 
   integrations: [sitemap(), svelte()],
 
+  build: {
+    format: "file",
+  },
+
   markdown: {
     shikiConfig: {
       theme: tomorrowNight,
     },
   },
+
+  trailingSlash: "never",
 
   vite: {
     plugins: [tailwindcss()],
