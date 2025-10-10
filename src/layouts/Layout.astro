@@ -33,6 +33,7 @@ const { title, style = "default", socialImage } = Astro.props as Props;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title ?? `Lynn Romich`} />
     <meta property="og:site_name" content="lynn.zone" />
+    <meta name="fediverse:creator" content="@lynnntropy@hachyderm.io" />
 
     {socialImage && <meta property="og:image" content={socialImage.url} />}
     {
