@@ -1,9 +1,19 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"span">;
+type Props = HTMLAttributes<"span"> & {
+  icon: string;
+  inline?: boolean;
+};
 
-const { ...attrs } = Astro.props;
+const { icon, inline, ...attrs } = Astro.props;
 ---
 
-<span class:list={[`relative iconify`, attrs.class]} {...attrs}></span>
+<span
+  class:list={[
+    `relative iconify`,
+    icon,
+    inline && "align-[-0.125em]",
+    attrs.class,
+  ]}
+  {...attrs}></span>
