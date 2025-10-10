@@ -12,6 +12,7 @@ import Layout from "./Layout.astro";
 import Links from "../components/Links.astro";
 import { getSocialImageForBlogPost } from "@/utils/blog";
 import type { CollectionEntry } from "astro:content";
+import Icon from "@/components/Icon.astro";
 
 type Props = {
   post: CollectionEntry<"blog">;
@@ -58,12 +59,16 @@ const showRelativeTime = differenceInDays(new Date(), date) >= 1;
     </div>
     {
       showDateWarning && (
-        <div class="mb-8 py-3 px-4 rounded-md bg-red-100 text-red-900 dark:bg-transparent dark:border-2 dark:border-red-900 dark:text-white">
-          Watch out! This post is{" "}
-          <strong class="font-medium">more than two years old</strong>.
-          <br class="hidden md:inline" />
-          For better or worse, tech tends to move quickly, so this post may be
-          out of date.
+        <div class="mb-8 py-3 px-4 rounded-md bg-yellow-100 text-yellow-900 dark:bg-transparent dark:border-2 dark:border-yellow-500 dark:text-white">
+          <Icon
+            icon="fa7-solid--clock"
+            inline={true}
+            class="mr-1 text-yellow-900/30 dark:text-white/30"
+          />
+          This post is more than{" "}
+          <strong class="font-medium">
+            {differenceInYears(new Date(), date)} years old.
+          </strong>
         </div>
       )
     }
