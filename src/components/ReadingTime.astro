@@ -8,4 +8,5 @@ const { minutes } = Astro.props;
 const coffeeCount = Math.max(1, Math.floor(minutes / 5));
 ---
 
-{new Array(coffeeCount).fill(0).map(() => "☕")}{" "}{Math.floor(minutes)} min read
+<span aria-hidden="true">{new Array(coffeeCount).fill(0).map(() => "☕")}</span>
+{Math.floor(minutes)} min read
