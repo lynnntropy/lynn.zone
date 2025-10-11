@@ -19,7 +19,7 @@
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.14",
-    "astro": "^5.14.1",
+    "astro": "^5.14.3",
     "date-fns": "^4.1.0",
     "reading-time": "^1.5.0",
     "svelte": "^5.39.9",
