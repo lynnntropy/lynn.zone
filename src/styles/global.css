@@ -39,6 +39,10 @@
     @apply bg-gray-100 text-black;
   }
 
+  * {
+    @apply focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-500 dark:focus-visible:outline-yellow-500;
+  }
+
   .shiki .language-id {
     display: none;
   }

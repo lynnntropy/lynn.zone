@@ -19,7 +19,12 @@ const { title, active = false, orgUrl = null } = Astro.props;
 >
   {
     orgUrl !== null ? (
-      <a href={orgUrl} target="_blank" rel="noopener noreferrer">
+      <a
+        href={orgUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block max-w-fit"
+      >
         <h3 class="mb-1 text-3xl text-gray-800 leading-tight transition dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-400">
           {title}
         </h3>

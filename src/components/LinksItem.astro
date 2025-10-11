@@ -8,7 +8,7 @@ const { ...attrs } = Astro.props;
 
 <a
   class:list={[
-    `flex items-center gap-2 text-base text-gray-800 font-normal transition-colors dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-300`,
+    `flex items-center gap-2 text-base text-gray-800 font-normal transition-[color] dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-300`,
     attrs.class,
   ]}
   {...attrs}><slot name="icon" /><slot name="name" /></a
