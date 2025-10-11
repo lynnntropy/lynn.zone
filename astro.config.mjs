@@ -14,8 +14,17 @@ export default defineConfig({
 
   integrations: [sitemap(), svelte()],
 
+  experimental: {
+    clientPrerender: true,
+  },
+
   build: {
     format: "file",
+  },
+
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "viewport",
   },
 
   markdown: {
