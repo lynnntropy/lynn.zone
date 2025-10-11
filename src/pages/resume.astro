@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Experience from "@/components/resume/Experience.astro";
 import Links from "../components/Links.astro";
 import Highlight from "../components/Highlight.astro";
+
+const yearsOfExperience = new Date().getFullYear() - 2017;
 ---
 
 <Layout title="Resume">
@@ -14,26 +16,22 @@ import Highlight from "../components/Highlight.astro";
   <div class="mb-10">
     <Links align="left" condensed={false} />
   </div>
-  <div class="mb-10 flex flex-col gap-4 md:leading-8 md:text-xl">
+  <div class="mb-10 flex flex-col gap-4 text-pretty md:leading-8 md:text-xl">
     <p>👋 Hi! I'm Lynn.</p>
     <p>
-      I'm a <Highlight>software engineer</Highlight> with more than {
-        new Date().getFullYear() - 2017
-      } years of professional experience building and maintaining digital products,
-      with a focus on the web.
+      I'm a <Highlight>software engineer</Highlight> with more than
+      {yearsOfExperience} years of professional experience.
     </p>
     <p>
-      I specialize in building websites, web applications, and APIs using modern
-      tools. I have many years of experience working with
-      <Highlight>TypeScript</Highlight>, <Highlight>React</Highlight>, and
-      <Highlight>PHP</Highlight>, but I'm also always open to learning new
-      things.
+      Most of my work so far has focused on the web and related technologies,
+      but I'm always interested in learning new things.
     </p>
     <p>
-      I most enjoy working with human-first, forward-thinking organizations that
-      don't shy away from investing in good engineering. If that's you, please
-      get in touch!
+      I've worked for and with all kinds of organizations, but I work best with
+      people-first teams that care deeply about their work and understand the
+      value of good engineering.
     </p>
+    <p>If that's you, please get in touch!</p>
   </div>
 
   <h2
