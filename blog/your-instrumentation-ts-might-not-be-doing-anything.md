@@ -1,5 +1,5 @@
 ---
-title: Your `instrumentation.ts` Might Not Be Doing Anything
+title: You Might Have Misplaced Your `instrumentation.ts`
 date: 2025-12-27
 ---
 
