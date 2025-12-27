@@ -1,6 +1,7 @@
 ---
 title: You Might Have Misplaced Your `instrumentation.ts`
 date: 2025-12-27
+unlisted: true
 ---
 
 If you have an `instrumentation.(ts|js)` in your Next.js app(s), you might want to double-check that it's actually being used.

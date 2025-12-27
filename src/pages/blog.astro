@@ -3,7 +3,9 @@ import { compareDesc, format } from "date-fns";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog")).sort((a, b) =>
+const posts = (await getCollection("blog", ({ data }) => {
+  return !data.unlisted;
+})).sort((a, b) =>
   compareDesc(a.data.date, b.data.date)
 );
 ---

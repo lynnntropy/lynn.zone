@@ -6,7 +6,9 @@ import Links from "../components/Links.astro";
 import Link from "../components/Link.astro";
 import { getCollection } from "astro:content";
 
-const recentBlogPosts = (await getCollection("blog"))
+const recentBlogPosts = (await getCollection("blog", ({ data }) => {
+  return !data.unlisted;
+}))
   .sort((a, b) => compareDesc(a.data.date, b.data.date))
   .slice(0, 3);
 ---
