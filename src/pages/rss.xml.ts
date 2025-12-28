@@ -19,9 +19,11 @@ export const GET: APIRoute = async (context) => {
   // See https://docs.astro.build/en/reference/container-reference/
   const container = await AstroContainer.create();
 
-  const posts = (await getCollection("blog")).sort((a, b) =>
-    a.data.date > b.data.date ? -1 : 1
-  );
+  const posts = (
+    await getCollection("blog", ({ data }) => {
+      return !data.unlisted;
+    })
+  ).sort((a, b) => (a.data.date > b.data.date ? -1 : 1));
 
   const feedItems: RSSFeedItem[] = [];
 
@@ -49,7 +51,7 @@ export const GET: APIRoute = async (context) => {
           return node;
         },
         sanitize({ dropElements: ["script", "style"] }),
-      ]
+      ],
     );
 
     feedItems.push({
